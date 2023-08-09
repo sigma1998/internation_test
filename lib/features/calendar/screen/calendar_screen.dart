@@ -20,30 +20,8 @@ class CalendarScreen extends StatefulWidget {
 }
 
 class _CalendarScreenState extends State<CalendarScreen> {
-  late final TextEditingController monthController;
-  late final TextEditingController yearController;
+
   final week = ['Mon', 'Tue', 'Wen', 'Thu', 'Fri', 'Sat', 'Sun'];
-
-  @override
-  void initState() {
-    monthController = TextEditingController();
-    yearController = TextEditingController();
-    monthController.addListener(() {
-      if (monthController.text.length != 2) return;
-      if (int.parse(monthController.text) > 12 ||
-          int.parse(monthController.text) == 0) {
-        monthController.clear();
-      }
-    });
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    monthController.dispose();
-    yearController.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +29,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text(
-          "Calendar",
+          "CALENDAR",
           style: TextStyle(fontWeight: FontWeight.w400, color: Colors.white),
         ),
         centerTitle: true,
